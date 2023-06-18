@@ -1,6 +1,6 @@
-import 'package:admin_zuki/Screen/chat.dart';
+import 'package:admin_zuki/Chat/Screen/chat.dart';
 import 'package:admin_zuki/Pesanan/pesanan.dart';
-import 'package:admin_zuki/riwayat.dart';
+import 'package:admin_zuki/Riwayat/riwayat.dart';
 import 'package:flutter/material.dart';
 
 class Tabbar extends StatefulWidget {
@@ -41,6 +41,9 @@ class _TabbarState extends State<Tabbar>with SingleTickerProviderStateMixin {
                 elevation: 0,
                 backgroundColor: Colors.transparent,
                 flexibleSpace: TabBar(
+                  indicatorSize: TabBarIndicatorSize.label,
+                  indicatorWeight: 2,
+                  indicatorColor: Color.fromRGBO(25, 164, 206, 1),
                   unselectedLabelColor: Colors.grey,
                   labelColor: Colors.black,
                   controller: controller,

@@ -1,5 +1,5 @@
 import 'package:admin_zuki/Chat/Model/message_model.dart';
-import 'package:admin_zuki/Screen/chatscreen.dart';
+import 'package:admin_zuki/Chat/Screen/chatscreen.dart';
 import 'package:flutter/material.dart'; 
 
 class Chat extends StatelessWidget {
@@ -24,7 +24,7 @@ class Chat extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 40,
+                  height: 36,
                 ),
                 Container(
                   padding: EdgeInsets.symmetric(
