@@ -26,7 +26,7 @@ class homepageState extends State<homepage> {
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(width: 4, color: Color.fromRGBO(25, 164, 206, 1))
                       ),
-                        child: Image.asset("assets/images/profile.png"),
+                        child: Image.asset("assets/images/before_login.png"),
                         width: 70,
                         height: 70,
                         padding: EdgeInsets.all(2),
