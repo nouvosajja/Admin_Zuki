@@ -24,143 +24,143 @@ class _DikonfirmasiState extends State<Dikonfirmasi> {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 80, left: 25),
+                padding: const EdgeInsets.only(top: 40, left: 25),
                 child: Row(
                   children: [
                     IconButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back,
                         color: Colors.black,
-                        size: 35,
+                        size: 25,
                       ),
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const homepage()),
+                              builder: (context) => const HomePage()),
                         );
                       },
                     ),
-                    SizedBox(width: 25),
-                    Text(
+                    const SizedBox(width: 10),
+                    const Text(
                       'Kilat',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
                   ],
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(top: 40, left: 34),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Pesanan siap diambil',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 18,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(top: 10, left: 34),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Silahkan selesaikan proses pesanan',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 12,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(top: 40, left: 34),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Total Berat',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 18,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10, left: 34, right: 34),
+                padding: const EdgeInsets.only(top: 10, left: 34, right: 34),
                 child: TextField(
                   controller: beratController,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Total Berat',
                   ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(top: 40, left: 34),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Total Harga',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 18,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10, left: 34, right: 34),
+                padding: const EdgeInsets.only(top: 10, left: 34, right: 34),
                 child: TextField(
                   controller: hargaController,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Total Harga',
                   ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(top: 40, left: 34),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Status Pembayaran',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 18,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10, left: 34, right: 34),
+                padding: const EdgeInsets.only(top: 10, left: 34, right: 34),
                 child: TextField(
                   controller: statusController,
                   keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Isi...',
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 50, left: 34, right: 34),
+                padding: const EdgeInsets.only(top: 50, left: 34, right: 34),
                 child: Container(
                   height: 50,
-                  width: 300,
+                  width: 179,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const homepage()),
+                            builder: (context) => const HomePage()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'Selesai',
                       style: TextStyle(
                         fontSize: 20,
@@ -168,44 +168,14 @@ class _DikonfirmasiState extends State<Dikonfirmasi> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(25, 164, 206, 1),
+                      backgroundColor: const Color.fromRGBO(25, 164, 206, 1),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(20),
                       ),
                     ),
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 40, left: 34, right: 34),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 1,
-                        color: Colors.black,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        'Zuki Laundry',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 1,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20)
             ],
           ),
         ),
