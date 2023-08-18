@@ -23,8 +23,8 @@ class _ChatScreenState extends State<ChatScreen> {
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.80,
               ),
-              padding: EdgeInsets.all(10),
-              margin: EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.symmetric(vertical: 10),
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(15),
@@ -38,7 +38,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
               child: Text(
                 message.text,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                 ),
               ),
@@ -55,7 +55,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     //     color: Colors.black45,
                     //   ),
                     // ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Container(
@@ -90,8 +90,8 @@ class _ChatScreenState extends State<ChatScreen> {
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.80,
               ),
-              padding: EdgeInsets.all(10),
-              margin: EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.symmetric(vertical: 10),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
@@ -105,7 +105,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
               child: Text(
                 message.text,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black54,
                 ),
               ),
@@ -130,7 +130,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         backgroundImage: AssetImage(message.sender.imageUrl),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     // Text(
@@ -152,17 +152,17 @@ class _ChatScreenState extends State<ChatScreen> {
 
   _sendMessageArea() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       height: 70,
       child: Row(
         children: <Widget>[
           IconButton(
-            icon: Icon(Icons.photo),
+            icon: const Icon(Icons.photo),
             iconSize: 25,
             color: Theme.of(context).primaryColor,
             onPressed: () {},
           ),
-          Expanded(
+          const Expanded(
             child: TextField(
               decoration: InputDecoration.collapsed(
                 hintText: 'Send a message..',
@@ -171,7 +171,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
           ),
           IconButton(
-            icon: Icon(Icons.send),
+            icon: const Icon(Icons.send),
             iconSize: 25,
             color: Theme.of(context).primaryColor,
             onPressed: () {},
@@ -193,13 +193,13 @@ class _ChatScreenState extends State<ChatScreen> {
             text: TextSpan(children: [
               TextSpan(
                   text: widget.user.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                   )),
             ])),
         leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios),
+            icon: const Icon(Icons.arrow_back_ios),
             color: Colors.white,
             onPressed: () {
               Navigator.pop(context);
@@ -210,7 +210,7 @@ class _ChatScreenState extends State<ChatScreen> {
           Expanded(
             child: ListView.builder(
               reverse: true,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               itemCount: messages.length,
               itemBuilder: (BuildContext context, int index) {
                 final Message message = messages[index];

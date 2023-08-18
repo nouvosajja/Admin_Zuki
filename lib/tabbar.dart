@@ -15,14 +15,12 @@ class _TabbarState extends State<Tabbar>with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller = TabController(length: 3, vsync: this);
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     controller?.dispose();
   }
@@ -43,7 +41,7 @@ class _TabbarState extends State<Tabbar>with SingleTickerProviderStateMixin {
                 flexibleSpace: TabBar(
                   indicatorSize: TabBarIndicatorSize.label,
                   indicatorWeight: 2,
-                  indicatorColor: Color.fromRGBO(25, 164, 206, 1),
+                  indicatorColor: const Color.fromRGBO(25, 164, 206, 1),
                   unselectedLabelColor: Colors.grey,
                   labelColor: Colors.black,
                   controller: controller,
@@ -51,15 +49,15 @@ class _TabbarState extends State<Tabbar>with SingleTickerProviderStateMixin {
                   Container(
                     height: 50,
                     child: 
-                  Center(child: Text('Pesanan', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))), 
+                  const Center(child: Text('Pesanan', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))), 
                   Container(
                     height: 50,
                     child: 
-                  Center(child: Text('Chat', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))), 
+                  const Center(child: Text('Chat', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))), 
                   Container(
                     height: 50,
                     child: 
-                  Center(child: Text('Riwayat', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))),],
+                  const Center(child: Text('Riwayat', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))),],
                 ),
                 automaticallyImplyLeading: false,
               ),
@@ -67,7 +65,7 @@ class _TabbarState extends State<Tabbar>with SingleTickerProviderStateMixin {
             Expanded(
               child: TabBarView(
                 controller: controller,
-                children: [
+                children: const [
               Pesanan(),
               Chat(),
               Riwayat()

@@ -41,121 +41,118 @@ class _MenungguKonfirmasiState extends State<Menunggu_Konfirmasi> {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 80, left: 25),
+                padding: const EdgeInsets.only(top: 40, left: 25),
                 child: Row(
                   children: [
                     IconButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back,
                         color: Colors.black,
-                        size: 35,
+                        size: 25,
                       ),
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const homepage()),
-                        );
+                        Navigator.pop(context);
                       },
                     ),
-                    SizedBox(width: 25),
-                    Text(
+                    const SizedBox(width: 10),
+                    const Text(
                       'Reguler',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 40, left: 34),
+              const Padding(
+                padding: EdgeInsets.only(top: 60, left: 34),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Pesanan siap diambil',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 18,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(top: 10, left: 34),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Silahkan ambil pesanan pelanggan',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 12,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(top: 50, left: 34),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Masukkan Total Berat',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 18,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10, left: 34, right: 34),
+                padding: const EdgeInsets.only(top: 10, left: 34, right: 34),
                 child: Container(
-                  margin: EdgeInsets.only(bottom: 10),
+                  margin: const EdgeInsets.only(bottom: 10),
                   child: TextField(
                     controller: weightController,
                     keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Total Berat',
                     ),
                   ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(top: 50, left: 34),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Masukkan Total Harga',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 18,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10, left: 34, right: 34),
+                padding: const EdgeInsets.only(top: 30, left: 34, right: 34),
                 child: Text(
                   'Total Harga: $formattedAmount',
-                  style: TextStyle(
-                    fontSize: 18,
+                  style: const TextStyle(
+                    fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 50, left: 34, right: 34),
+                padding: const EdgeInsets.only(top: 50, left: 34, right: 34),
                 child: Container(
                   height: 50,
-                  width: 300,
+                  width: 179,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const homepage()),
+                        MaterialPageRoute(builder: (context) => const HomePage()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'Konfirmasi',
                       style: TextStyle(
                         fontSize: 20,
@@ -163,41 +160,12 @@ class _MenungguKonfirmasiState extends State<Menunggu_Konfirmasi> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(25, 164, 206, 1),
+                      backgroundColor: const Color.fromRGBO(25, 164, 206, 1),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(20),
                       ),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 140, left: 34, right: 34),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 1,
-                        color: Colors.black,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        'Zuki Laundry',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 1,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ],

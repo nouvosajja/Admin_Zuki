@@ -23,18 +23,18 @@ class Chat extends StatelessWidget {
             ),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 36,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 20,
                     vertical: 15,
                   ),
                   child: Row(
                     children: <Widget>[
                       Container(
-                        padding: EdgeInsets.all(2),
+                        padding: const EdgeInsets.all(2),
                         child: CircleAvatar(
                           radius: 35,
                           backgroundImage: AssetImage(chat.sender.imageUrl),
@@ -42,7 +42,7 @@ class Chat extends StatelessWidget {
                       ),
                       Container(
                         width: MediaQuery.of(context).size.width * 0.65,
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 20,
                         ),
                         child: Column(
@@ -54,7 +54,7 @@ class Chat extends StatelessWidget {
                                   children: <Widget>[
                                     Text(
                                       chat.sender.name,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -63,14 +63,14 @@ class Chat extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Container(
                               alignment: Alignment.topLeft,
                               child: Text(
                                 chat.text,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 13,
                                   color: Colors.black54,
                                 ),
