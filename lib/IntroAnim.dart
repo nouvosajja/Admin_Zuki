@@ -1,6 +1,9 @@
+import 'package:admin_zuki/Home/homepage.dart';
+import 'package:admin_zuki/Login/screen.dart';
 import 'package:admin_zuki/intro.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 void main() {
@@ -17,15 +20,22 @@ class intro_anim extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<intro_anim> {
+  bool hasToken = false;
+  // make check token void
+  void checkToken() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    String? token = pref.getString('token');
+
+    setState(() {
+      hasToken = token != null && token.isNotEmpty;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const intro()),
-      );
-    });
+    checkToken();
+    Timer(const Duration(seconds: 3), () => hasToken ? Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage(),)) : Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen  (),)));
   }
 
   @override
@@ -33,26 +43,15 @@ class _SplashScreenState extends State<intro_anim> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'asset/image/splash 1.png',
-              width: 200,
-              height: 200,
-            ),
-            const SizedBox(height: 5),
-            const Text(
-              'Zuki Laundry',
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w900,
-                fontFamily: 'Poppins'
+        child: Stack(
+          alignment: Alignment.center,
+            children: [
+              Image.asset(
+                'assets/images/logo.png',
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    );
+      );
   }
 }

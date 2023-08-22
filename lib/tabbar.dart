@@ -1,10 +1,10 @@
-import 'package:admin_zuki/Chat/Screen/chat.dart';
 import 'package:admin_zuki/Pesanan/pesanan.dart';
 import 'package:admin_zuki/Riwayat/riwayat.dart';
+import 'package:admin_zuki/Sales/sales.dart';
 import 'package:flutter/material.dart';
 
 class Tabbar extends StatefulWidget {
-  const Tabbar({super.key});
+   Tabbar({super.key});
 
   @override
   State<Tabbar> createState() => _TabbarState();
@@ -34,7 +34,7 @@ class _TabbarState extends State<Tabbar>with SingleTickerProviderStateMixin {
             children: [
             SizedBox(
               height: 50,
-              width: 340,
+              width: 360,
               child: AppBar(
                 elevation: 0,
                 backgroundColor: Colors.transparent,
@@ -49,15 +49,16 @@ class _TabbarState extends State<Tabbar>with SingleTickerProviderStateMixin {
                   Container(
                     height: 50,
                     child: 
+                  const Center(child: Text('Sales', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))), 
+                  Container(
+                    height: 50,
+                    child: 
                   const Center(child: Text('Pesanan', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))), 
                   Container(
                     height: 50,
                     child: 
-                  const Center(child: Text('Chat', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))), 
-                  Container(
-                    height: 50,
-                    child: 
-                  const Center(child: Text('Riwayat', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))),],
+                   Center(child: Text('Riwayat', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),))),
+                   ],
                 ),
                 automaticallyImplyLeading: false,
               ),
@@ -65,10 +66,10 @@ class _TabbarState extends State<Tabbar>with SingleTickerProviderStateMixin {
             Expanded(
               child: TabBarView(
                 controller: controller,
-                children: const [
+                children:  [
+              Sales(),
               Pesanan(),
-              Chat(),
-              Riwayat()
+              Riwayat(),
             ], ))
           ],)
     );

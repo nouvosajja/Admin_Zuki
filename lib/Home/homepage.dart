@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:admin_zuki/Login/screen.dart';
-import 'package:admin_zuki/Pesanan/pesanan.dart';
+import 'package:admin_zuki/Pesanan/pesananreg.dart';
+import 'package:admin_zuki/tabbar.dart';
 import 'package:http/http.dart' as http;
 import 'package:admin_zuki/model/user_model.dart';
 import 'package:flutter/material.dart';
@@ -133,7 +134,8 @@ class HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            const Expanded(child: Pesanan())
+            SizedBox(height: 40,),
+            Expanded(child: Tabbar())
           ],
         ),
       ),

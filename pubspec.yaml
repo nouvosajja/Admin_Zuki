@@ -41,7 +41,8 @@ dependencies:
   intl: ^0.18.1
   shared_preferences: 
   http: 
-
+  font_awesome_flutter:
+  fl_chart: 
 
 dev_dependencies:
   flutter_test:
@@ -52,7 +53,6 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -68,15 +68,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/profile.png
-    - assets/images/reguler.png
-    - assets/images/ironman.jpeg
-    - assets/images/black-widow.jpg
-    - assets/images/captain-america.jpg
-    - assets/images/hulk.jpg
-    - assets/images/thor.png
-    - assets/images/captain-marvel.jpg
-    - assets/images/scarlet-witch.jpg
-    - assets/images/spiderman.jpg
+    - assets/images/logo.png
     - assets/images/before_login.png
   #   - images/a_dot_ham.jpeg
 

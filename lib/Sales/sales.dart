@@ -1,21 +1,22 @@
-import 'package:admin_zuki/Pesanan/pesananreg.dart';
-import 'package:admin_zuki/Pesanan/pesanankil.dart';
+import 'package:admin_zuki/Sales/Screen/chart.dart';
+import 'package:admin_zuki/Sales/Screen/chart2.dart';
+import 'package:admin_zuki/Sales/Screen/chart3.dart';
 import 'package:flutter/material.dart';
 
-class Pesanan extends StatefulWidget {
-  const Pesanan({super.key});
-  
+class Sales extends StatefulWidget {
+  const Sales({Key? key}) : super(key: key);
 
   @override
-  State<Pesanan> createState() => _PesananState();
+  State<Sales> createState() => _SalesState();
 }
 
-class _PesananState extends State<Pesanan>with SingleTickerProviderStateMixin {
-    TabController? controller;
+class _SalesState extends State<Sales> with SingleTickerProviderStateMixin {
+  TabController? controller;
+
   @override
   void initState() {
     super.initState();
-    controller = TabController(length: 2, vsync: this);
+    controller = TabController(length: 3, vsync: this);
     controller?.addListener(_onTabChange);
   }
 
@@ -29,10 +30,11 @@ class _PesananState extends State<Pesanan>with SingleTickerProviderStateMixin {
     controller?.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Padding(
         padding: const EdgeInsets.only(top: 20),
         child: Column(
@@ -43,35 +45,48 @@ class _PesananState extends State<Pesanan>with SingleTickerProviderStateMixin {
               child: AppBar(
                 elevation: 0,
                 backgroundColor: Colors.transparent,
-                flexibleSpace: TabBar(
-                  indicatorColor: Colors.transparent,
-                  controller: controller,
-                  tabs: [
-                    CardTabItem(
-                      label: 'Reguler',
-                      onPressed: () {
-                        controller?.animateTo(0);
-                      },
-                      isSelected: controller?.index == 0,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    CardTabItem(
-                      label: 'Kilat',
-                      onPressed: () {
-                        controller?.animateTo(1);
-                      },
-                      isSelected: controller?.index == 1,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                  ],
+                flexibleSpace: GestureDetector(
+                  
+                  child: TabBar(
+                    indicatorColor: Colors.transparent,
+                    controller: controller,
+                    tabs: [
+                      CardTabItem(
+                        label: '7 days',
+                        onPressed: () {
+                          controller?.animateTo(0);
+                        },
+                        isSelected: controller?.index == 0,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      CardTabItem(
+                        label: '1 month',
+                        onPressed: () {
+                          controller?.animateTo(1);
+                        },
+                        isSelected: controller?.index == 1,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      CardTabItem(
+                        label: 'All',
+                        onPressed: () {
+                          controller?.animateTo(2);
+                        },
+                        isSelected: controller?.index == 2,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ],
+                  ),
                 ),
                 automaticallyImplyLeading: false,
               ),
             ),
             Expanded(
               child: TabBarView(
+                    physics: NeverScrollableScrollPhysics(),
+
                 controller: controller,
-                children:  [Pesanan_reguler(), Pesanan_kilat()],
+                children:  [Chart(), Chart2(), Chart3()],
               ),
             ),
           ],
@@ -106,7 +121,7 @@ class _CardTabItemState extends State<CardTabItem> {
         widget.onPressed();
       },
       child: Card(
-        elevation: widget.isSelected ? 0 : 2,
+        elevation: widget.isSelected ? 0 : 5,
         color: widget.isSelected ? Color.fromRGBO(25, 164, 206, 1) : Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: widget.borderRadius ?? BorderRadius.circular(0),

@@ -1,3 +1,4 @@
+import 'package:admin_zuki/IntroAnim.dart';
 import 'package:flutter/material.dart';
 import 'package:admin_zuki/login/screen.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  LoginScreen(),
+      home:  intro_anim(),
     );
   }
 }
