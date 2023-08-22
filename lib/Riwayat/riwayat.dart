@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Riwayat extends StatefulWidget {
-  const Riwayat({super.key});
+Riwayat({super.key});
 
   @override
   State<Riwayat> createState() => _RiwayatState();

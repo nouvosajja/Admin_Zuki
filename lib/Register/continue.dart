@@ -129,7 +129,7 @@ class _ContinueScreenState extends State<ContinueScreen> {
                                   ),
                                 ),
                                 style: ElevatedButton.styleFrom(
-                                  primary: const Color.fromRGBO(0, 163, 255, 1),
+                                  backgroundColor: const Color.fromRGBO(0, 163, 255, 1),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
